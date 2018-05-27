@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Angular WWW project</h1>
+
+  <app-input (addItem)="addItem($event)"></app-input>
+
+  <app-list
+    [list]="list"
+    [template]="template"
+  ></app-list>
+
+  <ng-template #template let-item="item">
+    <li class="list-group-item inline-space">
+      {{item}}
+      <button
+        class="btn btn-primary"
+        (click)="removeItem(item)"
+      >
+        Remove
+      </button>
+    </li>
+  </ng-template>
+</div>

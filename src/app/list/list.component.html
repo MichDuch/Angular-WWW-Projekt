@@ -1,0 +1,15 @@
+<ul
+  *ngIf="list.length"
+  class="list-group"
+>
+  <ng-container
+    *ngFor="let item of list"
+    [ngTemplateOutlet]="template"
+    [ngTemplateOutletContext]="{ item: item }"
+  >
+  </ng-container>
+</ul>
+
+<div *ngIf="!list.length">
+  <h4>Empty list</h4>
+</div>

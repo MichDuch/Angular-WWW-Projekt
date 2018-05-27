@@ -1,0 +1,30 @@
+<form
+  class="form-inline"
+  [formGroup]="form"
+  (ngSubmit)="submitForm()"
+>
+  <div class="form-group">
+    <input
+      class="form-control mx-sm-3"
+      type="text"
+      formControlName="myCtrl"
+      placeholder="New name"
+    />
+  </div>
+
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!form.valid"
+  >
+    Add
+  </button>
+
+  <button
+    class="btn btn-danger"
+    *ngIf="form.value.myCtrl"
+    (click)="clearForm()"
+  >
+    Clear
+  </button>
+</form>
